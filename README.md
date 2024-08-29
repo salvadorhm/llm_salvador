@@ -24,6 +24,26 @@ En la página de [modelos](https://ollama.com/library) de ollama se busca el mod
 $ ollama pull tinyllama
 ````
 
+## 4. Prueba de request a la API REST
+
+Para realizar una petición básica a la API de ollama se sigue la siguiente estructura
+
+````bash
+curl -X POST http://localhost:11434/api/generate -d '{
+  "model": "tinyllama",
+  "prompt": "Why is the sky blue?"
+}'
+````
 
 
+### 4.1 Consulta a la API REST sin stream
 
+Prueba de consulta sin stream
+
+````bash
+curl -X POST http://localhost:11434/api/generate -d '{
+  "model": "tinyllama",
+  "prompt": "Why is the sky blue?",
+  "stream": false
+}'
+````
